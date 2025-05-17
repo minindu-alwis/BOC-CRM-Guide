@@ -55,7 +55,7 @@ const InitialScreen: React.FC<InitialScreenProps> = ({ onSelect, language, darkM
         {getTitle()}
       </h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-8">
         <button
           onClick={() => onSelect('withCard')}
           className={`flex flex-col items-center justify-center p-6 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 ${
@@ -114,9 +114,9 @@ const InitialScreen: React.FC<InitialScreenProps> = ({ onSelect, language, darkM
       
       <div className={`p-4 rounded-lg ${darkMode ? 'bg-black text-white' : 'bg-[#ffd200] text-black'}`}>
         <p className="text-center text-sm">
-          {language === 'English' && 'This is a step-by-step guide to using BOC ATM machines. Each step will automatically advance after 4 seconds.'}
-          {language === 'Sinhala' && 'මෙය BOC ATM යන්ත්‍ර භාවිතා කිරීම සඳහා පියවරෙන් පියවර මාර්ගෝපදේශයකි. සෑම පියවරක්ම තත්පර 4කට පසු ස්වයංක්‍රීයව ඉදිරියට යනු ඇත.'}
-          {language === 'Tamil' && 'இது BOC ATM இயந்திரங்களைப் பயன்படுத்துவதற்கான படிப்படியான வழிகாட்டி. ஒவ்வொரு படியும் 4 வினாடிகளுக்குப் பிறகு தானாகவே முன்னேறும்.'}
+          {language === 'English' && 'This is a step-by-step guide to using BOC CRM machines. Each step will automatically advance after 4 seconds.'}
+          {language === 'Sinhala' && 'මෙය BOC CRM යන්ත්‍ර භාවිතා කිරීම සඳහා පියවරෙන් පියවර මාර්ගෝපදේශයකි. සෑම පියවරක්ම තත්පර 4කට පසු ස්වයංක්‍රීයව ඉදිරියට යනු ඇත.'}
+          {language === 'Tamil' && 'இது BOC CRM இயந்திரங்களைப் பயன்படுத்துவதற்கான படிப்படியான வழிகாட்டி. ஒவ்வொரு படியும் 4 வினாடிகளுக்குப் பிறகு தானாகவே முன்னேறும்.'}
         </p>
       </div>
     </div>
