@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home } from 'lucide-react';
+import { Home, Moon, Sun, Play, Pause } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NavigationButtons from './components/NavigationButtons';
@@ -85,46 +85,54 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-      <Header language={language} />
+    <div className={`min-h-screen flex flex-col ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100'}`}>
+      <Header language={language} darkMode={darkMode} />
       
-      <main className="flex-grow container mx-auto px-4 py-6 max-w-4xl">
-        <div className="flex justify-between items-center mb-4">
+      <main className="flex-grow container mx-auto px-4 py-4 sm:py-6 max-w-4xl">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mb-4">
           <button 
             onClick={handleHome}
-            className="flex items-center bg-[#ffd200] hover:bg-[#e6bd00] text-black px-3 py-2 rounded-md shadow-md transition-colors"
+            className="w-full sm:w-auto flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black px-3 py-2 rounded-md shadow-md transition-colors"
+            aria-label="Go to home screen"
           >
-            <Home size={18} className="mr-3" />
+            <Home size={18} className="mr-2" />
             <span>Home</span>
           </button>
-         <div className="flex items-center">
-  <LanguageSelector 
-    language={language} 
-    onChange={setLanguage} 
-  />
-
+          
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 w-full sm:w-auto">
+            <LanguageSelector 
+              language={language} 
+              onChange={setLanguage}
+              darkMode={darkMode}
+            />
             
             <button 
               onClick={() => setDarkMode(!darkMode)}
-              className={`px-3 py-2 rounded-md shadow-md ${
-                darkMode ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-white'
+              className={`flex items-center px-3 py-2 rounded-md shadow-md transition-colors ${
+                darkMode ? 'bg-yellow-400 text-black' : 'bg-gray-800 text-white'
               }`}
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+              {darkMode ? <Sun size={18} className="mr-1" /> : <Moon size={18} className="mr-1" />}
+              <span className="hidden sm:inline">{darkMode ? 'Light' : 'Dark'}</span>
             </button>
             
             <button 
               onClick={() => setIsAutoProgressing(!isAutoProgressing)}
-              className={`px-3 py-2 rounded-md shadow-md ${
+              className={`flex items-center px-3 py-2 rounded-md shadow-md transition-colors ${
                 isAutoProgressing ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
               }`}
+              aria-label={isAutoProgressing ? "Turn off auto progression" : "Turn on auto progression"}
             >
-              {isAutoProgressing ? 'Auto: ON' : 'Auto: OFF'}
+              {isAutoProgressing ? <Pause size={18} className="mr-1" /> : <Play size={18} className="mr-1" />}
+              <span className="hidden sm:inline">Auto: {isAutoProgressing ? 'ON' : 'OFF'}</span>
             </button>
           </div>
         </div>
         
-        <div className={`bg-white rounded-lg shadow-lg p-4 mb-8 ${darkMode ? 'bg-gray-800 text-white' : ''}`}>
+        <div className={`rounded-lg shadow-lg p-4 mb-6 transition-colors ${
+          darkMode ? 'bg-gray-800 text-white' : 'bg-white'
+        }`}>
           {renderCurrentScreen()}
         </div>
         
