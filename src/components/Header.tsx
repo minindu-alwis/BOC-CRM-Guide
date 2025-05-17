@@ -8,9 +8,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ language }) => {
   const getTitle = () => {
     switch (language) {
-      case 'Sinhala': return 'බැංකු ඔෆ් සිලෝන් ඒටීඑම් මාර්ගෝපදේශය';
-      case 'Tamil': return 'வங்கி ஆஃப் சிலோன் ஏடிஎம் வழிகாட்டி';
-      default: return 'Bank of Ceylon ATM Guide';
+     case 'Sinhala': return 'බැංකු ඔෆ් සිලෝන් CRM මාර්ගෝපදේශය';
+case 'Tamil': return 'வங்கி ஆஃப் சிலோன் CRM வழிகாட்டி';
+default: return 'Bank of Ceylon CRM Guide';
+
     }
   };
 
