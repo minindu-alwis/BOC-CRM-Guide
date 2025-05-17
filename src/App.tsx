@@ -97,12 +97,12 @@ function App() {
             <Home size={18} className="mr-2" />
             <span>Home</span>
           </button>
-          
-          <div className="flex items-center space-x-4">
-            <LanguageSelector 
-              language={language} 
-              onChange={setLanguage} 
-            />
+         <div className="flex items-center gap-1">
+  <LanguageSelector 
+    language={language} 
+    onChange={setLanguage} 
+  />
+
             
             <button 
               onClick={() => setDarkMode(!darkMode)}
