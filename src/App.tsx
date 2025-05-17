@@ -97,7 +97,7 @@ function App() {
             <Home size={18} className="mr-2" />
             <span>Home</span>
           </button>
-         <div className="flex items-center gap-1">
+         <div className="flex items-center sm:gap-6 gap-0.5">
   <LanguageSelector 
     language={language} 
     onChange={setLanguage} 
