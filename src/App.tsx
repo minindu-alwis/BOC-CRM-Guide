@@ -94,10 +94,10 @@ function App() {
             onClick={handleHome}
             className="flex items-center bg-[#ffd200] hover:bg-[#e6bd00] text-black px-3 py-2 rounded-md shadow-md transition-colors"
           >
-            <Home size={18} className="mr-2" />
+            <Home size={18} className="mr-3" />
             <span>Home</span>
           </button>
-         <div className="flex items-center sm:gap-6 gap-0.5">
+         <div className="flex items-center">
   <LanguageSelector 
     language={language} 
     onChange={setLanguage} 
