@@ -34,7 +34,7 @@ function App() {
       if (currentStep < maxSteps - 1) {
         setCurrentStep(currentStep + 1);
       }
-    }, 4000);
+    }, 5000);
     
     return () => clearTimeout(timer);
   }, [currentStep, currentFlow, isAutoProgressing]);
